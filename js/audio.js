@@ -56,8 +56,8 @@ function initMusic() {
     recordImg.classList.remove('rotate-play');
 
     audio.onloadedmetadata=function(){
-        recordImg.style.backgroundImage=`url('img/record${musicsId}.jpg')`;
-        body.style.backgroundImage=`url('img/bg${musicsId}.png')`;
+        recordImg.style.backgroundImage=`url('./img/record${musicsId}.jpg')`;
+        body.style.backgroundImage=`url('./img/bg${musicsId}.png')`;
         musicTitle.innerText=musicData[musicsId][0];
         authorName.innerText=musicData[musicsId][1];
         refreshRotate();
@@ -156,7 +156,7 @@ playMode.addEventListener('click',function(){
     if(modeId>=4){
         modeId=1;
     }
-    playMode.style.backgroundImage=`url('img/mode${modeId}.png')`;
+    playMode.style.backgroundImage=`url('./img/mode${modeId}.png')`;
 });
 //当音乐播放完
 audio.addEventListener('ended', function() {
@@ -207,9 +207,9 @@ function updateVolume() {
 // 更新音量图标的函数
 function updateVolumnIcon() {
     if (audio.muted || audio.volume == 0) {
-        volume.style.backgroundImage = `url('img/静音.png')`;
+        volume.style.backgroundImage = `url('./img/静音.png')`;
     } else {
-        volume.style.backgroundImage = `url('img/音量.png')`;
+        volume.style.backgroundImage = `url('./img/音量.png')`;
     }
 }
 
@@ -258,4 +258,5 @@ function createMusic(){
         });
     }
 }
+
 document.addEventListener('DOMContentLoaded',createMusic);
